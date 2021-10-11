@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>
+            HTML Form
+        </title>
+    </head>
+    <body>
+        <h1>html</h1>
+        <form>
+            <label for="username">Usuário</label>
+            <input id="username" type="text" name="username" placeholder="digite um login" required>
+            <br>
+            <br>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" name="email" placeholder="digite um email" required>
+            <br>
+            <br>
+            <label for="password">Senha</label>
+            <input id="password" type="password" name="password" placeholder="digite uma senha">
+
+            <p>Selecione sua idade</p>
+            <input id="option-1" type="radio" name="age" value="0-25">
+            <label for="option-1">0 a 25 anos</label>
+            <input id="option-2" type="radio" name="age" value="26-50">
+            <label for="option-2">25 a 50 anos</label>
+            <input id="option-3" type="radio" name="age" value="51+">
+            <label for="option-3">51 ou mais anos</label>
+
+            <br><br>
+            <label for="question">Pergunta secreta</label>
+            <select name="question" id="question">
+                <option value="q1">qual seu animal favorito</option>
+                <option value="q2">qual sua cor favorita</option>
+                <option value="q3">cidade de nascimento</option>
+            </select>
+
+            <br>
+            <br>
+
+            <label for="answer">Resposta Secreta</label>
+            <input type="text" id="awnser" name="awnser">
+
+            <br>
+            <br>
+
+            <label for="suabiografia">Sua Biografia</label>
+            <textarea name="bio" id="bio" cols="30" rows="10"></textarea>
+
+            <br><br>
+
+            <input type="submit" value="salvar">
+        </form>
+    </body>
+</html>
