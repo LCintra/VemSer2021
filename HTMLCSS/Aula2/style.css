@@ -1,0 +1,49 @@
+body, html, *{
+    margin:0;
+    padding:0;
+}
+
+h1{
+    color:blue;
+    background-color: bisque;
+    font-size:50px;
+    text-decoration: underline;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+p{
+    color: black;
+    text-align: justify;
+    line-height:20px;
+    letter-spacing:1px;
+}
+
+ul{
+    /* border-width: 4px;
+    border-style: solid;
+    border-color:red */
+    border-top: 4px solid red;
+    border-bottom: 4px solid red;
+    border-left:8px dotted blue;
+    border-right:8px dotted blue;
+}
+
+li{
+    text-shadow: 2px 2px lightgreen;
+    list-style-type: square;
+}
+
+.class1{
+    background: aqua;
+    width: 400px;
+}
+
+#id1{
+    background-color: violet;
+}
+
+.exe{
+    background-color:aqua;
+    margin: 10px 20px 5px 40px
+}

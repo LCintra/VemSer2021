@@ -1,0 +1,20 @@
+*{
+    margin:0;
+    padding:0
+}
+
+.conteudo{
+    background-color: violet;
+}
+
+.conteudo small {
+    background-color: red;
+}
+
+.conteudo h4 {
+    font-size:60px
+}
+
+.conteudo2 h4{
+    font-size:90px
+}
