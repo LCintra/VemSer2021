@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body,html,*{
+    margin:0;
+    padding:0;
+    font-family: Poppins;
+}
+
+.container{
+    max-width: 90%;
+    margin:0 auto
+}
+
+header{
+    background-color:#1A75C1;
+    width: 100%;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    height:80px;
+}
+
+.search{
+    margin-left:40px;
+    border-radius: 30px;
+    border:none;
+    padding:10px 20px 8px 20px;
+    width: 560px;
+}
+
+.search::placeholder, .filter::placeholder{
+    color: #A6A6A6;
+    font-size: 16px;
+}
+
+.search-div, .filter-div{
+    position:relative;
+}
+
+button{
+    background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.search-div img{
+    position: absolute;
+    right: 20px;
+    top:10px
+}
+
+.filter-div{
+    margin-left:10px
+}
+
+.filter{
+    width:190px;
+    border-radius: 30px;
+    border:none;
+    padding:10px 20px 8px 20px;
+}
+
+.filter-div img{
+    position: absolute;
+    right: 20px;
+    top:7px
+}
+
+.user-menu-div{
+    margin-left:auto;
+}
+
+.main-div{
+    display: flex;
+}
+
+main{
+    width: 60%;
+    background-color:#EFF3F8
+}
+aside{
+    width:40%;
+    background-color: #f8f8f8;
+}
+
+main h1{
+    text-align: center;
+    color:#1A75C1;
+    font-size: 60px;
+    font-weight: bolder;
+    margin-top:20px;
+}
+
+main small {
+    color:#1A75C1;
+    display: block;
+    margin-bottom:20px
+}
+
+.news-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px
+}
+
+.news-div{
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 2px 2px 2px #F2F2F2;
+}
+
+.news-div p{
+    text-align: center;
+    background-color: white;
+    padding: 10px 0px;
+    height:48px
+}
+
+.news-row{
+    padding-bottom:60px
+}
+
+.load-more{
+    margin: auto;
+    display: block;
+    font-weight: bold;
+    font-size: 30px;
+    color:#847E7E;
+    padding-top:40px
+}
+
+aside .aniversary{
+    color:#004E8F;
+    font-size:28px;
+    padding-top:80px;
+    padding-left:30px;
+}
+
+aside span{
+    color:#004E8F;
+    font-size:20px;
+    font-weight: bold;
+    display: block;
+    padding-top:20px;
+    padding-left:30px;
+}
+
+.person-info{
+    padding-left:20px;
+}
+
+aside ul li {
+    display: flex;
+    flex-direction: column;
+}
+
+aside ul li .aniversary-div{
+    display: flex;
+}
+
+aside ul li p{
+    color:#004E8F;
+    font-weight: 500;
+    font-size:16px
+}
+
+aside ul li{
+    padding-top:50px;
+    list-style: none;
+}
+
+aside ul li:first-child{
+    padding-top:20px;
+}
+
+aside ul li p:first-child{
+    font-weight: bold;
+    font-size:20px
+}
+
+aside ul li button{
+    background-color: #1A75C1;
+    margin-bottom:20px;
+    width:186px;
+    color:white;
+    padding: 6px 0px;
+    border-radius:45px;
+}
+
+.congrats-button-div{
+    align-self: end;
+    margin-left:auto
+}
+
+aside ul li button img{
+    margin-top:5px;
+    margin-right:5px;
+}
+
+.send-message{
+    display: block;
+    margin-top:20px;
+    border-radius: 40px;
+    border-color: #A6A6A6;
+    box-shadow:none;
+    padding:10px 20px;
+    border-style: solid;
+}
+
+.send-message::placeholder{
+    color:#A6A6A6;
+}
+
+.first-ul {
+    border-bottom: #004E8F solid 3px;
+    padding-bottom: 40px;
+}
+
+.next-aniversary{
+    display: block;
+    margin: 60px auto 0px auto;
+    background-color: #1A75C1;
+    color:white;
+    padding:12px 0px;
+    border-radius:6px;
+    width: 210px;
+}
+
+aside .events{
+    font-size:28px;
+    color:#1A75C1;
+    padding-left:30px;
+    padding-top:20px
+}
+
+.slider{
+    padding-left:25px;
+    padding-top:15px;
+    padding-bottom:40px;
+}
+
+footer ul li{
+    list-style: none;
+}
+
+footer ul{
+    display: flex;
+    height:86px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: black;
+}
