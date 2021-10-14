@@ -11,6 +11,15 @@ a{
     color:black
 }
 
+html, body {
+    height:100%;
+}
+
+body {
+    display:flex; 
+    flex-direction:column; 
+}
+
 /* Container */
 
 .container{
@@ -97,6 +106,7 @@ form label{
 
 footer{
     background-color: #4DAB60;
+    margin-top:auto;
 }
 
 .footerbar{
