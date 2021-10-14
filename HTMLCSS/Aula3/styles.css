@@ -1,0 +1,48 @@
+.btn{
+    background-color: white;
+    color:red;
+    width: 300px;
+}
+.btn:hover{
+    background-color:red;
+    color:white
+}
+.btn:active{
+    font-weight: bold;
+}
+.btn:visited{
+    color:aqua
+}
+nav ul li a {
+    color: brown
+}
+nav ul li a:hover {
+    color: forestgreen
+}
+nav li{
+    margin-right: 30px;
+}
+ul li{
+    display: inline;
+}
+
+nav ul li::before{
+    content: '';
+    display: block;
+    background-image: url(./download.png);
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+}
+
+.teste p:nth-child(2){
+    background-color:aqua
+}
+
+.teste p:last-child{
+    background-color:cadetblue
+}
+
+p:not(.classico) {
+    color:red
+}
