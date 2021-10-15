@@ -65,6 +65,8 @@ a:hover{
 
 .main-div .ad img {
     height:250px;
+    width:340px;
+    border: solid 5px #000
 }
 
 .main-div .ad p {
