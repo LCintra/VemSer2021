@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Flexbox</title>
+    <style>
+      body,
+      ul,
+      li,
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      div{
+          width:300px;
+          height:300px
+      }
+      main{
+          display: flex;
+          flex-wrap: wrap;
+      }
+      aside a {
+          background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#">Logo</a>
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Contato</a>
+          </li>
+          <li>
+            <a href="#">Sobre</a>
+          </li>
+          <li>
+            <a href="#">Vídeos</a>
+          </li>
+        </ul>
+      </nav>
+      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod et animi!</span>
+      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod et animi!</span>
+      <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod et animi!</span>
+    </header>
+    <main>
+        <div style="background-color: red;">
+            1
+        </div>
+        <div style="background-color:blue">
+            2
+        </div>
+        <div style="background-color:green">
+            3
+        </div>
+        <div style="background-color: yellow;">
+            4
+        </div>
+    </main>
+    <aside>
+        <a href="#">oi</a>
+    </aside>
+  </body>
+</html>
