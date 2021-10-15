@@ -1,0 +1,61 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+/* Header */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-top:40px;
+}
+
+header{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding:20px;
+}
+
+ul li{
+    display: inline;
+    margin-left:15px;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+    font-size:18px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+/* Gallery */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery div {
+    flex: 1 1 300px;
+    margin:10px
+}
+
+.gallery p {
+    text-align: center;
+    margin-top:10px
+}
