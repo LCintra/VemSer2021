@@ -104,22 +104,30 @@ main small {
 }
 
 .news-row{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top:-30px
 }
 
 .news-div{
     display: flex;
     flex-direction: column;
     box-shadow: 2px 2px 2px 2px #F2F2F2;
+    width: 30%;
+    height:30%;
+    margin-top:30px;
 }
 
 .news-div p{
     text-align: center;
+    padding:0px 8px;
+}
+
+.news-div div{
     background-color: white;
+    height:3em;
     padding: 10px 0px;
-    height:48px
 }
 
 .news-row{
@@ -162,6 +170,7 @@ aside ul li {
 
 aside ul li .aniversary-div{
     display: flex;
+    flex-wrap: wrap;
 }
 
 aside ul li p{
@@ -243,6 +252,8 @@ aside .events{
     padding-left:25px;
     padding-top:15px;
     padding-bottom:40px;
+    width: 90%;
+    height: 90%;
 }
 
 footer ul li{
