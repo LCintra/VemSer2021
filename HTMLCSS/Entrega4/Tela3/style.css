@@ -40,13 +40,13 @@ a:hover{
 
 .main-div{
     display: flex;
-    max-width: 1200px;
+    max-width: 90vw;
     margin:50px auto;
     justify-content: space-between;
 }
 
 main img{
-    width: 800px;
+    width: 60vw;
 }
 
 .main-div p{
@@ -63,5 +63,26 @@ aside div {
 }
 
 aside img{
-    width: 300px;
+    width: 20vw;
+}
+
+@media (max-width:640px){
+    .main-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    main {
+        align-self: center;
+    }
+    aside{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top:30px
+    }
+    aside div img {
+        justify-content: center;
+    }
 }
