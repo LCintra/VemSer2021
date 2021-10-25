@@ -6,4 +6,4 @@ do{
     numPar += 2
     i++
 } while(i != 50)
-console.log(soma)
+console.log(`A soma dos 50 primeiros números pares é ${soma}`)

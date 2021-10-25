@@ -6,7 +6,7 @@ for(let i = 2016; i<=2021;i++){
         percentual *= 2
     }
     salary += percentual*salary
-    console.log(`No final do ano de ${i} o salário está ${salary}, percentual de ${percentual}`)
+    console.log(`Com o aumento de ${i} o salário ficou R$${salary}, percentual de ${percentual}`)
 }
 
-console.log(salary)
+console.log(`O salário em 2021 é R$${salary}`)
