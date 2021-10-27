@@ -1,0 +1,7 @@
+1) Crie uma função que receba uma string e retorne a maior palavra dentro da string 
+   // exemplo: minhaFuncao( 'Eu adoro Javscript' ) => retorna 'Javascript'
+
+2) Crie uma função que receba uma string e retorna a quantidade de vogais na string;
+
+3) Crie uma função que receba uma string e retorne todas possíveis combinações da string;
+// exemplo: minhaFunc('Dog') => retorno 'd', 'do', 'dog', 'og', 'dg', 'g'
