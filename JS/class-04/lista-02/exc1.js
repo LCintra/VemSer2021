@@ -1,4 +1,4 @@
-function exc2(string) {
+function contaConsoantesVogais(string) {
   if(typeof string != 'string'){
     return 'Parâmetro inválido'
   }
@@ -17,4 +17,4 @@ function exc2(string) {
 }
 
 let stringExemplo = 'uma string de exemplo 320320 @!#|';
-console.log(exc2(stringExemplo));
+console.log(contaConsoantesVogais(stringExemplo));
