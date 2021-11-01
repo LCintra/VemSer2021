@@ -1,5 +1,7 @@
 let colaboradores = [];
 let projetos = [];
+let contadorIdProjetos = 1;
+let contadorIdColaboradores = 1;
 
 class Validacoes{
     validaIsNumber(dado){
@@ -10,19 +12,12 @@ class Validacoes{
             return true;
         }
     }
-    validaIsString(dado){
-        if(typeof dado != 'string'){
+    validaIsNotEmpty(dado){
+        if(dado == '' || dado == undefined || dado == null){
+            alert('Dado inserido incorretamente');
             return false;
         } else{
             return true;
-        }
-    }
-    validaIdUnico(id,array){
-        if(array.some(dado => dado.id === id)){
-            alert(`O ID já existe!`);
-            return true;
-        } else{
-            return false;
         }
     }
     validaIdExiste(id,array){
@@ -69,9 +64,9 @@ class Colaborador{
     codProjeto = 0;
     marcacoesPonto = [];
 
-    constructor(id, nome){
+    constructor(id,nome){
         this.id = new Validacoes().validaIsNumber(id) ? id : this.id;
-        this.nome = new Validacoes().validaIsString(nome) ? nome : this.nome;
+        this.nome = new Validacoes().validaIsNotEmpty(nome) ? nome : this.nome;
     }
     
     marcarPonto(d,h){
@@ -85,7 +80,7 @@ class Projeto{
     colaboradoresAlocados = [];
     constructor(id,titulo){
         this.id = new Validacoes().validaIsNumber(id) ? id : this.id;
-        this.titulo = new Validacoes().validaIsString(titulo) ? titulo : this.titulo;
+        this.titulo = new Validacoes().validaIsNotEmpty(titulo) ? titulo : this.titulo;
     }
 }
 
@@ -103,28 +98,28 @@ do{
     `);
     switch(resp){
         case '1':
-            //pedindo o id do colaborador
-            let idColaborador = prompt('Qual o id do colaborador?');
-            idColaborador = parseFloat(idColaborador);
-            //validações
-            if(!new Validacoes().validaIsNumber(idColaborador) || new Validacoes().validaIdUnico(idColaborador,colaboradores)) break;
             //pedindo o nome do colaborador
             let nome = prompt('Qual o nome do colaborador?');
+            if(!new Validacoes().validaIsNotEmpty(nome)) break;
             //criando o colaborador
-            colaboradores.push(new Colaborador(idColaborador,nome));
-            alert(`Colaborador ${nome} de ID ${idColaborador} cadastrado com sucesso!`);
+            colaboradores.push(new Colaborador(contadorIdColaboradores,nome));
+            ///avisando o sucesso na criação
+            alert(`Colaborador ${nome} de ID ${contadorIdColaboradores} cadastrado com sucesso!`);
+            //incrementando o id pro próximo colaborador
+            contadorIdColaboradores++;
+            console.log('\nConsole de cada elemento da lista => ', ...colaboradores);
             break;
         case '2':
-            //pedindo o id do projeto
-            let idProjeto = prompt('Qual o código do projeto?');
-            idProjeto = parseFloat(idProjeto);
-            //validações
-            if(!new Validacoes().validaIsNumber(idProjeto) || new Validacoes().validaIdUnico(idProjeto,projetos)) break;
             //pedindo o titulo do projeto
             let titulo = prompt('Qual o título do projeto?');
+            if(!new Validacoes().validaIsNotEmpty(titulo)) break;
             //Criando o projeto
-            projetos.push(new Projeto(idProjeto,titulo));
-            alert(`Projeto ${titulo} de ID ${idProjeto} cadastrado com sucesso!`);
+            projetos.push(new Projeto(contadorIdProjetos,titulo));
+            //avisando o sucesso na criação
+            alert(`Projeto ${titulo} de ID ${contadorIdProjetos} cadastrado com sucesso!`);
+            //incrementando o id pro proximo projeto
+            contadorIdProjetos++;
+            console.log('\nConsole de cada elemento da lista => ', ...projetos);
             break;
         case '3':
             //pedindo o id do colaborador
@@ -148,6 +143,8 @@ do{
             //inserindo no colaborador qual o projeto que ele está
             colaborador.codProjeto = idProjetoAlocar;
             alert(`O colaborador ${colaborador.nome} foi alocado do projeto ${projeto.titulo}`);
+            console.log('\nConsole de cada elemento da lista => ', ...colaboradores);
+            console.log('\nConsole de cada elemento da lista => ', ...projetos);
             break;
         case '4':
             //pedindo o id do colaborador que deseja desalocar  
@@ -167,6 +164,8 @@ do{
                 projetoADesalocar.colaboradoresAlocados = projetoADesalocar.colaboradoresAlocados.filter(colaborador => colaborador.id != colaboradorADesalocar.id);
                 alert('Colaborador desalocado!');
             }
+            console.log('\nConsole de cada elemento da lista => ', ...colaboradores);
+            console.log('\nConsole de cada elemento da lista => ', ...projetos);
             break
         case '5':
             //pedindo o id do colaborador que vai marcar o ponto
@@ -178,12 +177,16 @@ do{
             !new Validacoes().validaIdExiste(idColaboradorMarcarPonto,colaboradores)) break;
             //pedindo a hora
             let horaPonto = parseFloat(prompt('Qual a hora do ponto?'));
+            if(!new Validacoes().validaIsNumber(horaPonto)) break;
             //pedindo o dia
             let diaPonto = parseFloat(prompt('Qual o dia do ponto?'));
+            if(!new Validacoes().validaIsNumber(diaPonto)) break;
             if(confirm(`Confirma marcar o ponto de ${colaboradorAMarcarPonto.nome} no dia ${diaPonto} as ${horaPonto} horas?`)){
                 colaboradorAMarcarPonto.marcarPonto(horaPonto,diaPonto);
                 alert('Ponto marcado!');
             }
+            console.log('\nConsole de cada elemento da lista => ', ...colaboradores);
+            console.log('\nConsole de cada elemento da lista => ', ...projetos);
             break
         case '6':
             //criando a mensagem
@@ -224,6 +227,8 @@ do{
         case '9':
             //mensagem antes de desligar o prompt
             alert('Desligando Sistema...');
+            console.log('\nConsole de cada elemento da lista => ', ...colaboradores);
+            console.log('\nConsole de cada elemento da lista => ', ...projetos);
             break;
         default:
             //caso o usuário não coloque nenhuma opção válida;
