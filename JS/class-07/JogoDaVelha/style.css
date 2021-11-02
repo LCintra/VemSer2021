@@ -1,0 +1,108 @@
+*{
+    padding:0;
+    margin:0;
+}
+
+main{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.player-1-div h2{
+    color: blue;
+}
+
+.player-1-div span, .player-2-div span{
+    font-size:72px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.player-2-div h2{
+    color:red
+}
+
+
+.pontuation-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#top-title{
+    padding-top:30px;
+    padding-bottom:15px;
+}
+
+.game-main-div{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+
+.game-square{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-square:nth-child(1),.game-square:nth-child(4){
+    border-bottom:solid 2px gray;
+}
+
+.game-square:nth-child(1),.game-square:nth-child(4),.game-square:nth-child(7){
+    border-right:solid 2px gray;
+}
+.game-square:nth-child(2),.game-square:nth-child(5){
+    border-bottom: solid 2px gray;
+}
+.game-square:nth-child(3),.game-square:nth-child(6),.game-square:nth-child(9){
+    border-left:solid 2px gray;
+}
+.game-square:nth-child(3),.game-square:nth-child(6){
+    border-bottom:solid 2px gray;
+}
+
+.bottom-information{
+    padding-top:20px;
+    font-size:18px;
+}
+
+.player-round-text-player-1{
+    padding-left:5px;
+    color:blue
+}
+
+.player-round-text-player-2{
+    padding-left:5px;
+    color:red
+}
+
+#reset-button{
+    margin-bottom:15px;
+}
+
+.player-1-mark{
+    color:blue;
+    font-size:32px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.player-2-mark{
+    color:red;
+    font-size:32px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
