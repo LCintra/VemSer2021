@@ -145,11 +145,11 @@ const validarData = () => { // deve retornar um boolean (true = válido, false =
             inputData.value = dataConvertida.format('DD/MM/')
         }
     }
-
+    let dataEstaCompleta = dataDigitada.length==10
     let dataExiste = dataConvertida.isValid()
     let maiorDe18Anos = today.diff(moment(dataSemBarras, 'DDMMYYYY'), 'years') >= 18
 
-    let ehValido = dataExiste && maiorDe18Anos
+    let ehValido = dataExiste && maiorDe18Anos && dataEstaCompleta
 
     let erroData = document.getElementById('date-registration-error')
     if(!ehValido){
