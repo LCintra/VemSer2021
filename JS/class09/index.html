@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 09 - APIs</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+<body style="height: 100vh;">
+    <div id="container" class="h-100 flex-column d-flex align-items-center justify-content-center">
+        <form id="login" class="w-50 pb-3 border border-primary rounded flex-column d-flex align-items-center justify-content-center">
+            <div class="bg bg-primary w-100 h-100 text-center p-2 text-white">
+                <span>Login do Sistema</span>
+            </div>
+            <div class="p-3 d-flex flex-column">
+                <span>Email</span>
+                <input type="email" id="email-input-login">
+            </div>
+        
+            <div class="p-3 d-flex flex-column">
+                <span>Senha</span>
+                <input type="password" id="password-input-login">
+            </div>
+        
+            <div class="w-50 d-flex justify-content-between">
+                <button type="button" onclick="validarLogin()">Login</button>
+                <button type="button" onclick="irPara('login', 'registration')">Registre-se</span>
+            </div>
+        </form>
+
+        <form id="registration" class="w-50 pb-3 border border-primary rounded flex-column align-items-center justify-content-center d-none">
+            <div class="bg bg-primary w-100 h-100 text-center p-2 text-white">
+                <span>Cadastro</span>
+            </div>
+            <div class="p-3 d-flex flex-column">
+                <span>Nome*</span>
+                <input id="name-input-registration" onkeyup="validarNome('cadastro')">
+                <span id="name-registration-error" class="d-none">Nome inválido</span>
+            </div>
+            <div class="p-3 d-flex flex-column">
+                <span>Data de Nascimento*</span>
+                <input id="date-input-registration" onkeyup="validarData('cadastro')" maxlength="10">
+                <span id="date-registration-error" class="d-none">Data inválida</span>
+            </div>
+
+            <div class="p-3 d-flex flex-column">
+                <span>Email*</span>
+                <input id="email-input-registration" onkeyup="validarEmail('cadastro')">
+                <span id="email-registration-error" class="d-none">Email inválido</span>
+            </div>
+
+            <div class="p-3 d-flex flex-column">
+                <span>Senha*</span>
+                <input id="password-input-registration" onkeyup="validarSenha('cadastro')">
+                <span id="password-registration-error" class="d-none">Senha inválida</span>
+            </div>
+
+            <div class="w-50 d-flex justify-content-between">
+                <button type="button" onclick="irPara('registration', 'login')">Voltar</button>
+                <button type="button" id="register-btn" onclick="return validarCadastro('cadastro')">Cadastrar</button>
+            </div>
+            <div>
+            </div>
+        </form>
+        <form id="edit" class="w-50 pb-3 border border-primary rounded flex-column align-items-center justify-content-center d-none">
+            <div class="bg bg-primary w-100 h-100 text-center p-2 text-white">
+                <span>Editar Colaborador</span>
+            </div>
+            <div class="p-3 d-none flex-column">
+                <span>ID</span>
+                <input id="id-input-edit">
+            </div>
+            <div class="p-3 d-flex flex-column">
+                <span>Nome*</span>
+                <input id="name-input-edit" onkeyup="validarNome('edicao')">
+                <span id="name-edit-error" class="d-none">Nome inválido</span>
+            </div>
+            <div class="p-3 d-flex flex-column">
+                <span>Data de Nascimento*</span>
+                <input id="date-input-edit" onkeyup="validarData('edicao')" maxlength="10">
+                <span id="date-edit-error" class="d-none">Data inválida</span>
+            </div>
+
+            <div class="p-3 d-flex flex-column">
+                <span>Email*</span>
+                <input id="email-input-edit" onkeyup="validarEmail('edicao')">
+                <span id="email-edit-error" class="d-none">Email inválido</span>
+            </div>
+
+            <div class="p-3 d-flex flex-column">
+                <span>Senha*</span>
+                <input id="password-input-edit" onkeyup="validarSenha('edicao')">
+                <span id="password-edit-error" class="d-none">Senha inválida</span>
+            </div>
+
+            <div class="w-50 d-flex justify-content-between">
+                <button type="button" onclick="irPara('edit', 'home')">Voltar</button>
+                <button type="button" id="edit-btn" onclick="return validarEdicao('edicao')">Editar</button>
+            </div>
+            <div>
+            </div>
+        </form>
+
+        <div id="home" class="w-50 pb-3 border border-primary rounded flex-column align-items-center justify-content-center d-none">
+            <div class="bg bg-primary w-100 h-100 text-center p-2 text-white">
+                <span>Página Inicial</span>
+            </div>
+
+            <button id="list-button" class="mt-3" type="button" onclick="listarUsuarios()">Pesquisar usuários</button>
+
+            <ul id="user-list" style="padding-left:0px">
+                <!--Lista que será utilizada para exibir os usuários-->
+            </ul>
+
+            <button type="button" onclick="irPara('home', 'login')">Sair</button>
+        </div>
+    </div>
+
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/moment"></script>
+    <script src="script.js"></script>
+</body>
+</html>
