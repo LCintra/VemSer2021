@@ -1,0 +1,12 @@
+.addressTitle{
+  text-align: center;
+  padding-bottom:20px;
+}
+
+.mapIframe{
+  width: 600px;
+  height:350px;
+  display: block;
+  margin:0 auto;
+  margin-bottom:50px;
+}

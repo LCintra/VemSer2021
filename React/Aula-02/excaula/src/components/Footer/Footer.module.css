@@ -1,0 +1,9 @@
+.footerDiv{
+  background-color: #4DAB60;
+  padding: 25px 0
+}
+
+.footerInsideDiv{
+  display: flex;
+  justify-content: space-between;
+}

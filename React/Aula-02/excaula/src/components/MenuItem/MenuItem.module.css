@@ -1,0 +1,12 @@
+.menuItem{
+  padding-left:15px;
+  color:black;
+}
+
+.menuItemAncor{
+  text-decoration: none;
+}
+
+.menuItemAncor:hover{
+  text-decoration: underline;
+}

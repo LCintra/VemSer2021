@@ -1,0 +1,16 @@
+.coguImage{
+  width:125px;
+  height: 125px;
+  padding-bottom:15px;
+}
+
+.listLi{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listLi p:hover{
+  text-decoration: underline;
+  cursor:pointer;
+}
