@@ -1,17 +1,21 @@
 import './App.css';
-import FirstComponent from './components/FirstComponent'
-import SayMyName from './components/SayMyName';
-import Personal from './components/Personal';
 import List from './components/List';
+import Form from './components/Form';
+import Eventos from './components/Eventos';
+import SayMyName from './components/SayMyName'
+import Condicional from './components/Condicional';
 
 function App() {
-const url = 'https://via.placeholder.com/150';
-const name = 'Joãozinho'
+  function calcular(numero){
+    return numero + 1
+  }
 
   return (
     <div className="App">
-        <SayMyName name={name}/>
-        <List/>
+        {/* <Eventos calc={calcular} num={10}/>
+        <SayMyName calcular={calcular}/>*/}
+        <Form/>
+        <Condicional/>
     </div>
   );
 }
