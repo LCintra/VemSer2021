@@ -1,7 +1,10 @@
 import styles from "./MenuItem.module.css"
+import {Link} from 'react-router-dom'
 const MenuItem = ({nome,link}) =>{
   return(
-    <a className={styles.menuItemAncor} href={link}><li className={styles.menuItem}>{nome}</li></a>
+    <>
+      <Link className={styles.menuItemAncor} to={`/${link}`}><li className={styles.menuItem}>{nome}</li></Link>
+    </>
   );
 }
 

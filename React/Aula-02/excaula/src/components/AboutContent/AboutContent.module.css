@@ -1,0 +1,14 @@
+.aboutTitle{
+  text-align: center;
+  padding-bottom:25px;
+}
+
+.iframeVideo{
+  display: block;
+  margin:0 auto
+}
+
+.paragraph{
+  text-align: justify;
+  padding: 25px 0px
+}

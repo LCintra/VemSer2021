@@ -1,22 +1,26 @@
-import './App.css';
-import List from './components/List';
-import Form from './components/Form';
-import Eventos from './components/Eventos';
-import SayMyName from './components/SayMyName'
-import Condicional from './components/Condicional';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from 'react-router-dom'
+import Contato from './pages/Contato';
+import Empresa from './pages/Empresa';
+import Home from './pages/Home';
+import Menu from './components/Menu';
+import Footer from './components/Footer'
 
 function App() {
-  function calcular(numero){
-    return numero + 1
-  }
-
-  return (
-    <div className="App">
-        {/* <Eventos calc={calcular} num={10}/>
-        <SayMyName calcular={calcular}/>*/}
-        <Form/>
-        <Condicional/>
-    </div>
+  return(
+    <Router>
+      <Menu Link={Link}/>
+      <Routes>
+        <Route path="/" element={<Home/>}></Route>
+        <Route path="/empresa" element={<Empresa/>}></Route>
+        <Route path="/contato" element={<Contato/>}></Route>
+      </Routes>
+      <Footer Link={Link}></Footer>
+    </Router>
   );
 }
 

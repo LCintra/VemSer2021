@@ -11,3 +11,17 @@
 li{
   list-style: none;
 }
+
+html, body, #root {
+  height:100%;
+}
+
+#root {
+  display:flex; 
+  flex-direction:column;
+  width: 100%;
+}
+
+footer{
+  margin-top:auto;
+}

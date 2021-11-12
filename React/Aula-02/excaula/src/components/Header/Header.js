@@ -4,12 +4,14 @@ import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <div className="container">
-      <div className={styles.headerDiv}>
-        <LogoArea />
-        <Menu />
+    <header className={styles.headerDiv}>
+      <div className="container">
+        <div className={styles.headerInsideDiv}>
+          <LogoArea />
+          <Menu />
+        </div>
       </div>
-    </div>
+    </header>
   );
 };
 
