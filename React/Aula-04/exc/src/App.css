@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+*{
+  padding:0;
+  margin:0;
+}
+
+button,form{
+  margin-top:20px;
+}
+
+h3{
+  margin-top:15px;
+}
+
+p{
+  padding-top:10px;
+}
