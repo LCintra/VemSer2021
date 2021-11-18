@@ -1,11 +1,16 @@
 import './App.css';
-import Routers from './routers'
+import { AuthProvider } from './context/AuthContext';
+import Routers from './routers' 
+import {Router} from 'react-router-dom'
+import history from './history';
 
 function App() {
   return (
-    <div className="App">
-      <Routers/>
-    </div>
+    <AuthProvider>
+      <Router history={history}>
+        <Routers/>
+      </Router>
+    </AuthProvider>
   );
 }
 
