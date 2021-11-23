@@ -1,0 +1,58 @@
+.cardMain img{
+  width: 250px;
+  border-radius: 125px;
+  margin-top:15px;
+  border: solid 2px #2DCB70;
+}
+
+.cardMain .contentDiv{
+  width: 50%;
+  margin: 0 auto;
+  
+}
+
+.cardMain h4{
+  margin:15px 0px;
+  color:white
+}
+
+.cardMain h4 span{
+  color:#2DCB70
+}
+
+.cardMain .buttonsDiv{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.cardMain h2{
+  font-size:32px;
+  color:#2DCB70
+}
+
+.cardMain .buttonsDiv a{
+  min-width: 125px;
+  border: solid 2px #2DCB70;
+  background-color: #2C3E50;
+  padding:10px 0;
+  border-radius:10px;
+  color:#2DCB70;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.cardMain .buttonsDiv a:hover{
+  color:white;
+  background-color:#2DCB70;
+}
+
+.cardMain .buttonsDiv .followersParagraph{
+  color:white;
+  font-size:24px;
+  font-weight: bold;
+}
+
+.cardMain .buttonsDiv .followersParagraph span{
+  color:#2DCB70
+}
