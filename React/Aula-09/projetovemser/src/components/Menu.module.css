@@ -1,0 +1,13 @@
+.menu a{
+  color:#FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu ul li{
+  display: inline-flex;
+}
+
+.menu li{
+  margin-left:10px;
+}
