@@ -11,3 +11,13 @@
 .menu li{
   margin-left:10px;
 }
+
+.menu li button{
+  padding: 5px 10px;
+  font-size:18px;
+  background-color: red;
+  border:none;
+  color:#FFF;
+  border-radius:3px;
+  font-weight: bold;
+}

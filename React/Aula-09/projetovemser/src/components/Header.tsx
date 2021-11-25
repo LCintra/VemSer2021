@@ -9,7 +9,7 @@ export default function Header() {
       <div className='container'>
         <div className={styles.contentheader}>
           <a href="/">
-            <img width="150px" src={logo} alt="logo"></img>
+            <img className={styles.logoImg} width="80px" src={logo} alt="logo"></img>
           </a>
           <Menu />
         </div>
