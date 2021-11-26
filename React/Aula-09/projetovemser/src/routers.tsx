@@ -10,18 +10,21 @@ import Login from "./pages/Login"
 import Pessoa from "./pages/Pessoa"
 import {AuthProvider} from './context/AuthContext'
 import Home from "./pages/Home"
+import { PessoaProvider } from "./context/PessoaContext"
 
 const Routers = () =>{
   return(
     <BrowserRouter>
       <AuthProvider>
-        <Header/>
-        <Routes>
-          <Route path="/" element={<Home/>}/>
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/pessoa" element={<Pessoa/>}/>
-        </Routes>
-        <Footer/>
+        <PessoaProvider>
+          <Header/>
+          <Routes>
+            <Route path="/" element={<Home/>}/>
+            <Route path="/login" element={<Login/>}/>
+            <Route path="/pessoa" element={<Pessoa/>}/>
+          </Routes>
+          <Footer/>
+        </PessoaProvider>
       </AuthProvider>
     </BrowserRouter>
   )
