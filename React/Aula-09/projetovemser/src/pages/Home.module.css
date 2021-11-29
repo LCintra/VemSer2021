@@ -1,0 +1,24 @@
+.home{
+  background-color: #3AAF83;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.home h2{
+  color:white;
+  font-size:48px;
+  margin:16px 0;
+}
+
+.home .homeImage{
+  width: 500px;
+  margin:50px 0
+}
+
+.home a{
+  color:white;
+  font-weight: bold;
+  font-size: 72px;
+}

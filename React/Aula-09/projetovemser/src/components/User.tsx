@@ -5,6 +5,7 @@ import editIcon from '../images/pencil.png'
 import deleteIcon from '../images/bin.png'
 import { useContext } from "react"
 import { PessoaContext } from "../context/PessoaContext"
+import { MdEmail,MdCalendarToday,MdDns,MdModeEditOutline,MdDelete } from "react-icons/md";
 import moment from "moment"
 
 interface IPessoa{
@@ -18,22 +19,22 @@ const User: React.FC<IPessoa> = ({pessoa,deletePessoa}) =>{
     <li className={styles.usuario}>
       <h3>{pessoa.nome}</h3>
       <img className={styles.userImage} src={defaultUser}/>
-      <p>{pessoa.cpf}</p>
-      <p>{pessoa.email}</p>
-      <p>{moment(pessoa.dataNascimento).format('DD/MM/YYYY')}</p>
+      <p><span>{<MdDns/>}</span>{pessoa.cpf}</p>
+      <p><span>{<MdEmail/>}</span>{pessoa.email}</p>
+      <p>{<span>{<MdCalendarToday/>}</span>}{moment(pessoa.dataNascimento).format('DD/MM/YYYY')}</p>
       <div>
-        <img onClick={()=>{
+        <MdModeEditOutline onClick={()=>{
           if(pessoa.idPessoa){
             setPessoaEditar(pessoa)
             setEditMode(true)
           }
-        }} className={styles.pessoaIcons} src={editIcon}/>
-        <img onClick={()=>{
+        }} className={styles.pessoaIcons}/>
+        <MdDelete onClick={()=>{
           console.log('entrou')
           if(pessoa.idPessoa){
             deletePessoa(pessoa.idPessoa)
           }
-        }} className={styles.pessoaIcons} src={deleteIcon}/>
+        }} className={styles.pessoaIcons}/>
       </div>
     </li>
   )

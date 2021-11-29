@@ -5,13 +5,10 @@ import { PessoaContext } from '../context/PessoaContext'
 import { PessoasDTO  } from '../model/PessoaDTO'
 import styles from './Pessoa.module.css'
 import { Formik, Field, Form, FormikHelpers } from 'formik';
-import nameIcon from '../images/user.png'
-import emailIcon from '../images/o-email.png'
-import nascIcon from '../images/calendar.png'
-import cpfIcon from '../images/document.png'
 import loadingGif from '../images/loading2.gif'
 import { IoPerson } from "react-icons/io5"
 import { MdEmail,MdCalendarToday,MdDns } from "react-icons/md";
+import ReactInputMask from 'react-input-mask'
 
 
 export default function Pessoa() {
@@ -31,7 +28,7 @@ export default function Pessoa() {
   let initialValues = editMode ? {
     nome:pessoaEditar.nome,
     email:pessoaEditar.email,
-    dataNascimento:pessoaEditar.dataNascimento,
+    dataNascimento:pessoaEditar.dataNascimento.split('-').reverse().join('-').replaceAll('-','/'),
     cpf:pessoaEditar.cpf,
   } : {
     nome:'',
@@ -39,7 +36,6 @@ export default function Pessoa() {
     dataNascimento:'',
     cpf:'',
   }
-  console.log(initialValues)
 
   useEffect(()=>{
     (async()=>{
@@ -55,28 +51,31 @@ export default function Pessoa() {
           initialValues={initialValues}
           onSubmit={async(
             values: PessoasDTO,
-            { setSubmitting }: FormikHelpers<PessoasDTO>
+            { setSubmitting, resetForm }: FormikHelpers<PessoasDTO>,
           ) => {
               if(!editMode){
                 try{
+                  values.dataNascimento = values.dataNascimento.split('/').reverse().join('/').replaceAll('/','-')
+                  values.cpf = values.cpf.replaceAll('.','').replaceAll('-','')
                   await api.post('/pessoa',values)
                 } catch(error){
-                  console.log(error)
+                  alert('Algum dos Campos apresentou problemas')
                 }
               } else{
                 try {
                   await api.put(`/pessoa/${pessoaEditar.idPessoa}`,{
-                    cpf: values.cpf,
-                    dataNascimento: values.dataNascimento,
+                    cpf: values.cpf.replaceAll('.','').replaceAll('-',''),
+                    dataNascimento: values.dataNascimento.split('/').reverse().join('/').replaceAll('/','-'),
                     email: values.email,
                     nome: values.nome
                   })
                 } catch (error) {
-                  console.log(error)
+                  alert('Algum dos Campos apresentou problemas')
                 }
                 setEditMode(false)
               }
               setSubmitting(false)
+              resetForm()
               await getListPessoas()
           }} enableReinitialize={true}
         >
@@ -100,7 +99,9 @@ export default function Pessoa() {
             <div className={styles.inputDiv}>
               <label htmlFor="dataNascimento">Data Nascimento</label>
               <div className={styles.fieldDiv}>
-                <Field id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento" />
+                <Field id="dataNascimento" name="dataNascimento" render={({field}:any)=>(
+                  <ReactInputMask {...field} mask={`99/99/9999`} placeholder="Data Nascimento"/>
+                )} />
                 <span><MdCalendarToday className={styles.inputIcon}/></span>
               </div>
             </div>
@@ -108,7 +109,9 @@ export default function Pessoa() {
             <div className={styles.inputDiv}>
               <label htmlFor="cpf">CPF</label>
               <div className={styles.fieldDiv}>
-                <Field id="cpf" name="cpf" placeholder="CPF" />
+                <Field id="cpf" name="cpf" render={({field}:any)=>(
+                  <ReactInputMask {...field} placeholder="CPF" mask={'999.999.999-99'} />
+                )} />
                 <span><MdDns className={styles.inputIcon}/></span>
               </div>
             </div>
