@@ -15,9 +15,10 @@
 .menu li button{
   padding: 5px 10px;
   font-size:18px;
-  background-color: red;
+  background-color: #3AAF83;
   border:none;
   color:#FFF;
   border-radius:3px;
   font-weight: bold;
+  cursor: pointer;
 }

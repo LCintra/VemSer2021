@@ -117,9 +117,7 @@ export default function Pessoa() {
         <h1 className={styles.sectionTitle}>Usuários</h1>
         <ul className={styles.userlist}>
           {listPessoas.map(pessoa => (
-            <>
-              <User key={pessoa.idPessoa} pessoa={pessoa} deletePessoa={deletePessoa} />
-            </>
+            <User key={pessoa.idPessoa} pessoa={pessoa} deletePessoa={deletePessoa} />
           ))}
         </ul>
       </div>
