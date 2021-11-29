@@ -1,0 +1,23 @@
+.notFound{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.notFound h1{
+  margin-top:20px;
+  color:#3AAF83;
+  font-size:84px;
+}
+
+.notFound h2{
+  font-size:32px;
+  color:#3AAF83;
+}
+
+.notFound img{
+  width: 200px;
+  margin:30px 0;
+  background-color: #3AAF83;
+  border-radius: 100px;
+}

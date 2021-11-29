@@ -8,6 +8,8 @@ interface IPessoaContext{
   setEditMode:(value: boolean) => void;
   pessoaEditar:PessoasDTO;
   setPessoaEditar:React.Dispatch<React.SetStateAction<PessoasDTO>>;
+  listLoading:boolean;
+  setListLoading:React.Dispatch<React.SetStateAction<boolean>>
 }
 
 
@@ -17,9 +19,10 @@ const PessoaProvider : React.FC<ReactNode> = ({children}) =>{
   const [listPessoas,setListPessoas] = useState<Array<PessoasDTO>>([])
   const [editMode,setEditMode] = useState(false)
   const [pessoaEditar,setPessoaEditar] = useState({} as PessoasDTO)
+  const [listLoading,setListLoading] = useState(true)
 
   return(
-    <PessoaContext.Provider value={{listPessoas,setListPessoas,editMode,setEditMode,pessoaEditar,setPessoaEditar}}>
+    <PessoaContext.Provider value={{listPessoas,setListPessoas,editMode,setEditMode,pessoaEditar,setPessoaEditar,listLoading,setListLoading}}>
       {children}
     </PessoaContext.Provider>
   )

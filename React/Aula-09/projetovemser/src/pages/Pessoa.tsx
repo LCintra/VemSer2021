@@ -9,12 +9,14 @@ import nameIcon from '../images/user.png'
 import emailIcon from '../images/o-email.png'
 import nascIcon from '../images/calendar.png'
 import cpfIcon from '../images/document.png'
+import loadingGif from '../images/loading2.gif'
 
 export default function Pessoa() {
-  const {listPessoas,setListPessoas,editMode,setEditMode,pessoaEditar,setPessoaEditar} = useContext(PessoaContext);
+  const {listPessoas,setListPessoas,editMode,setEditMode,pessoaEditar,setPessoaEditar,listLoading,setListLoading} = useContext(PessoaContext);
 
   const getListPessoas = async () =>{
     const {data} = await api.get('/pessoa');
+    setListLoading(false)
     setListPessoas(data);
   }
 
@@ -115,11 +117,12 @@ export default function Pessoa() {
         </Formik>
       </div>
         <h1 className={styles.sectionTitle}>Usuários</h1>
-        <ul className={styles.userlist}>
+          {listLoading ? <img src={loadingGif} /> :    
+          <ul className={styles.userlist}>
           {listPessoas.map(pessoa => (
             <User key={pessoa.idPessoa} pessoa={pessoa} deletePessoa={deletePessoa} />
           ))}
-        </ul>
+        </ul>}
       </div>
     </main>
   )
