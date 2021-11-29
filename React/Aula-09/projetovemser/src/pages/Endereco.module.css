@@ -1,11 +1,11 @@
-.login{
+.endereco{
   display: flex;
   align-items: center;
   flex-direction: column;
   background-color: #3AAF83;
 }
 
-.loginBlock{
+.enderecoBlock{
   display: flex;
   background-color: white;
   width: 40%;
@@ -16,40 +16,41 @@
   -moz-box-shadow: 0px 10px 16px rgb(53, 53, 53);
   -webkit-box-shadow: 0px 10px 16px rgb(53, 53, 53);
   box-shadow: 0px 10px 16px rgb(53, 53, 53);
+  margin-bottom:50px;
 }
 
-.login h1{
+.endereco h1{
   padding: 10px 0px;
   margin-bottom:15px;
 }
 
-.login .inputdiv{
+.endereco .inputdiv{
   display: flex;
   flex-direction: column;
 }
 
-.login .loginIcon{
+.endereco .loginIcon{
   width: 50px;
   margin-bottom:30px;
 }
 
-.login .inputdiv label{
+.endereco .inputdiv label{
   margin-bottom:5px;
 }
 
-.login .inputdiv input{
+.endereco .inputdiv input{
   padding:6px;
   border-radius:6px;
   border:black solid 1px;
-  padding-left:16%
+  padding-left:30px;
 }
 
-.login .buttondiv{
+.endereco .buttondiv{
   display: flex;
   justify-content: center;
 }
 
-.login .buttondiv button{
+.endereco .buttondiv button{
   margin-top:15px;
   width: 100%;
   background-color: #3AAF83;
@@ -60,14 +61,13 @@
   border-radius: 10px;
   cursor:pointer;
   margin-bottom:10px;
-  margin-left:16%
 }
 
-.login .buttondiv button:hover{
+.endereco .buttondiv button:hover{
   background-color: #4abd91;
 }
 
-.login .inputIcon{
+.endereco .inputIcon{
   width: 16px;
   position: absolute;
   left:6px;
@@ -75,7 +75,7 @@
   color:#3AAF83
 }
 
-.login .fieldDiv{
+.endereco .fieldDiv{
   position:relative;
   margin-bottom:10px;
 }

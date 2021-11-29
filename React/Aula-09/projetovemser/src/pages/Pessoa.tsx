@@ -10,6 +10,9 @@ import emailIcon from '../images/o-email.png'
 import nascIcon from '../images/calendar.png'
 import cpfIcon from '../images/document.png'
 import loadingGif from '../images/loading2.gif'
+import { IoPerson } from "react-icons/io5"
+import { MdEmail,MdCalendarToday,MdDns } from "react-icons/md";
+
 
 export default function Pessoa() {
   const {listPessoas,setListPessoas,editMode,setEditMode,pessoaEditar,setPessoaEditar,listLoading,setListLoading} = useContext(PessoaContext);
@@ -82,7 +85,7 @@ export default function Pessoa() {
               <label htmlFor="nome">Nome</label>
               <div className={styles.fieldDiv}>
                 <Field id="nome" name="nome" placeholder="Nome" />
-                <span><img className={styles.inputIcon} src={nameIcon}></img></span>
+                <span><IoPerson className={styles.inputIcon}/></span>
               </div>
             </div>
 
@@ -90,7 +93,7 @@ export default function Pessoa() {
               <label htmlFor="email">E-mail</label>
               <div className={styles.fieldDiv}>
                 <Field id="email" name="email" placeholder="E-mail" />
-                <span><img className={styles.inputIcon} src={emailIcon}></img></span>
+                <span><MdEmail className={styles.inputIcon}/></span>
               </div>
             </div>
 
@@ -98,7 +101,7 @@ export default function Pessoa() {
               <label htmlFor="dataNascimento">Data Nascimento</label>
               <div className={styles.fieldDiv}>
                 <Field id="dataNascimento" name="dataNascimento" placeholder="Data Nascimento" />
-                <span><img className={styles.inputIcon} src={nascIcon}></img></span>
+                <span><MdCalendarToday className={styles.inputIcon}/></span>
               </div>
             </div>
 
@@ -106,7 +109,7 @@ export default function Pessoa() {
               <label htmlFor="cpf">CPF</label>
               <div className={styles.fieldDiv}>
                 <Field id="cpf" name="cpf" placeholder="CPF" />
-                <span><img className={styles.inputIcon} src={cpfIcon}></img></span>
+                <span><MdDns className={styles.inputIcon}/></span>
               </div>
             </div>
 

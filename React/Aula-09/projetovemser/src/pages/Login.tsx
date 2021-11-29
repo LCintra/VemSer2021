@@ -6,6 +6,9 @@ import { LoginDTO } from '../model/LoginDTO';
 import loginImage from '../images/login.jpg'
 import inputUser from '../images/user.png'
 import inputPassword from '../images/password.png'
+import { IoPerson } from "react-icons/io5"
+import { MdLock } from "react-icons/md";
+
 
 
 export default function Login() {
@@ -39,14 +42,14 @@ export default function Login() {
               <label htmlFor="usuario">Usuário</label>
               <div className={styles.fieldDiv}>
                 <Field id="usuario" name="usuario" placeholder="Usuario"/>
-                <span><img className={styles.inputIcon} src={inputUser}></img></span>
+                <span><IoPerson className={styles.inputIcon}/></span>
               </div>
             </div>
             <div className={styles.inputdiv}>
               <label htmlFor="senha">Senha</label>
               <div className={styles.fieldDiv}>
                 <Field id="senha" type="password" name="senha" placeholder="Senha" />
-                <span><img className={styles.inputIcon} src={inputPassword}></img></span>
+                <span><MdLock className={styles.inputIcon}/></span>
               </div>
             </div>
             <div className={styles.buttondiv}>

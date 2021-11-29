@@ -9,6 +9,7 @@ export default function Menu() {
     <nav className={styles.menu}>
       <ul>
         {auth && <li><Link to="/pessoa">Pessoa</Link></li>}
+        {auth && <li><Link to="/endereco">Endereço</Link></li>}
         <li><Link to="/login">Login</Link></li>
         <li>{auth && <button onClick={handleLogout}>Logout</button>}</li>
       </ul>

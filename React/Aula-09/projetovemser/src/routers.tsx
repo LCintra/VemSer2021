@@ -13,6 +13,7 @@ import Home from "./pages/Home"
 import { PessoaProvider } from "./context/PessoaContext"
 import { useEffect, useState } from "react"
 import NotFound from "./components/NotFound"
+import Endereco from "./pages/Endereco"
 
 const Routers = () =>{
   const [isLogin, setIsLogin] = useState(false)
@@ -33,6 +34,7 @@ const Routers = () =>{
             <Route path="/" element={<Home/>}/>
             <Route path="/login" element={<Login/>}/>
             <Route path="/pessoa" element={<Pessoa/>}/>
+            <Route path="/endereco" element={<Endereco/>}/>
             <Route path="*" element={<NotFound/>}></Route>
           </Routes> 
           :           
