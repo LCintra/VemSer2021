@@ -1,0 +1,13 @@
+.header{
+  background-color: black;
+}
+
+.contentheader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoImg {
+  margin: 5px 0px
+}

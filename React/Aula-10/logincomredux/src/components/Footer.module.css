@@ -1,0 +1,14 @@
+.footer{
+  background-color: black;
+  padding: 15px
+}
+
+.footer small, .footer address{
+  color:white;
+  font-size:13px;
+}
+
+.footercontent{
+  display: flex;
+  justify-content: space-between;
+}

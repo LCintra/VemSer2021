@@ -1,0 +1,81 @@
+.endereco{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #3AAF83;
+}
+
+.enderecoBlock{
+  display: flex;
+  background-color: white;
+  width: 40%;
+  flex-direction: column;
+  align-items: center;
+  margin-top:40px;
+  padding:40px 0px;
+  -moz-box-shadow: 0px 10px 16px rgb(53, 53, 53);
+  -webkit-box-shadow: 0px 10px 16px rgb(53, 53, 53);
+  box-shadow: 0px 10px 16px rgb(53, 53, 53);
+  margin-bottom:50px;
+}
+
+.endereco h1{
+  padding: 10px 0px;
+  margin-bottom:15px;
+}
+
+.endereco .inputdiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.endereco .loginIcon{
+  width: 50px;
+  margin-bottom:30px;
+}
+
+.endereco .inputdiv label{
+  margin-bottom:5px;
+}
+
+.endereco .inputdiv input{
+  padding:6px;
+  border-radius:6px;
+  border:black solid 1px;
+  padding-left:30px;
+}
+
+.endereco .buttondiv{
+  display: flex;
+  justify-content: center;
+}
+
+.endereco .buttondiv button{
+  margin-top:15px;
+  width: 100%;
+  background-color: #3AAF83;
+  border:none;
+  padding: 5px 0px;
+  color:white;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor:pointer;
+  margin-bottom:10px;
+}
+
+.endereco .buttondiv button:hover{
+  background-color: #4abd91;
+}
+
+.endereco .inputIcon{
+  width: 16px;
+  position: absolute;
+  left:6px;
+  top:6px;
+  color:#3AAF83
+}
+
+.endereco .fieldDiv{
+  position:relative;
+  margin-bottom:10px;
+}
