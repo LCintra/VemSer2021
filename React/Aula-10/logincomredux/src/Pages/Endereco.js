@@ -34,6 +34,7 @@ const Endereco = ({props,dispatch}) =>{
             }} id="cep" name="cep" placeholder="CEP"/>
               <span><BsArchiveFill className={styles.inputIcon}/></span>
             </div>
+            <p className={styles.errors}>{props.errors ? 'o CEP não existe' : ''}</p>
           </div>
           <div className={styles.inputdiv}>
             <label htmlFor="cidade">Cidade</label>

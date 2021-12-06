@@ -10,6 +10,7 @@ export const handleListLoading = async(dispatch) => {
 
 export const handleGetPeople = async (dispatch) =>{
   const {data} = await api.get('/pessoa')
+  data.sort((a,b) => a.idPessoa > b.idPessoa ? 1 : -1)
   const pessoas = {
     type: 'GET_PESSOAS',
     pessoas: data

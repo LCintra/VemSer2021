@@ -79,3 +79,9 @@
   position:relative;
   margin-bottom:10px;
 }
+
+.endereco .errors{
+  color:red;
+  margin-bottom:10px;
+  font-weight: bold;
+}

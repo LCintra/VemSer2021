@@ -10,7 +10,9 @@ export const handleEndereco = async (cep,dispatch) =>{
         cidade: data.localidade,
         complemento: data.complemento,
         estado: data.uf,
-        logradouro: data.logradouro
+        logradouro: data.logradouro,
+        errors: false,
+        pais: 'Brasil'
       }
     } else{
       endereco = {
@@ -19,7 +21,9 @@ export const handleEndereco = async (cep,dispatch) =>{
         cidade: '',
         complemento: '',
         estado: '',
-        logradouro: ''
+        logradouro: '',
+        errors: true,
+        pais: ''
       }
     }
   } catch (error) {
@@ -29,7 +33,9 @@ export const handleEndereco = async (cep,dispatch) =>{
       cidade: '',
       complemento: '',
       estado: '',
-      logradouro: ''
+      logradouro: '',
+      errors: true,
+      pais: ''
     }
   }
   dispatch(endereco)

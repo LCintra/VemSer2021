@@ -35,15 +35,6 @@ function loginReducer(state = INITIAL_STATE,action){
       auth:action.auth
     }
   }
-
-  if(action.type === 'SET_ISLOGIN'){
-    return{
-      ...state,
-      isLogin:action.isLogin
-    }
-  }
-
-
   return state
 }
 

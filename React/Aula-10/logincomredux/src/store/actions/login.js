@@ -1,7 +1,7 @@
 import api from '../../api'
 export const handleLogin = async (user,dispatch) => {
-  const {data} = await api.post('/auth',user)
-  if(data){
+  try {
+    const {data} = await api.post('/auth',user)
     console.log(data)
     localStorage.setItem('token',data)
     api.defaults.headers.common['Authorization'] = data
@@ -13,8 +13,8 @@ export const handleLogin = async (user,dispatch) => {
       loading:false
     }
     dispatch(logado)
-  } else{
-    alert('Deu erro no login')
+  } catch (error) {
+    alert('Usuário ou Senha Incorretos')
   }
 }
 
@@ -26,13 +26,14 @@ export const handleLogout = (dispatch) =>{
     type: 'SET_LOGOUT',
     auth:false
   }
+  handleLoading(true,dispatch)
   dispatch(deslogado)
 }
 
-export const handleLoading = (dispatch) => {
+export const handleLoading = (mode,dispatch) => {
   const loading = {
     type: 'SET_LOADING',
-    loading:false
+    loading: mode
   }
   dispatch(loading)
 }
@@ -43,12 +44,4 @@ export const handleAuth = (dispatch) => {
     auth:true
   }
   dispatch(auth)
-}
-
-export const handleIsLogin = (dispatch) =>{
-  const isLogin = {
-    type: 'SET_ISLOGIN',
-    isLogin: true
-  }
-  dispatch(isLogin)
 }

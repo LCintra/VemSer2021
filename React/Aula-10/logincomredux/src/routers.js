@@ -12,32 +12,26 @@ import Endereco from "./Pages/Endereco";
 import NotFound from "./Pages/NotFound";
 
 
-const Routers = ({ props, dispatch }) => {
+const Routers = ({ loading, auth, dispatch }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
       api.defaults.headers.common["Authorization"] = token;
       handleAuth(dispatch);
     }
-    handleLoading(dispatch);
+    handleLoading(false,dispatch);
   }, []);
 
-  useEffect(()=>{
-    const token = localStorage.getItem('token')
-    if(token){
-      handleIsLogin(dispatch)
-    }
-  },[])
-
-  if (props.loading) {
+  if (loading) {
     return <h1>Loading</h1>;
   }
+  console.log(loading)
 
   return (
     <>
       <BrowserRouter>
         <Header />
-        {props.isLogin ? (
+        {auth ? (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
@@ -59,7 +53,8 @@ const Routers = ({ props, dispatch }) => {
 };
 
 const mapStateToProps = (state) => ({
-  props: state.loginReducer,
+  loading: state.loginReducer.loading,
+  auth: state.loginReducer.auth
 });
 
 export default connect(mapStateToProps)(Routers);

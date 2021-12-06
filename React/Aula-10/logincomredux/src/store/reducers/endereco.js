@@ -5,6 +5,7 @@ const INITIAL_STATE = {
   estado: '',
   logradouro: '',
   pais: '',
+  errors: false
 }
 
 function enderecoReducer(state = INITIAL_STATE,action){
@@ -16,7 +17,8 @@ function enderecoReducer(state = INITIAL_STATE,action){
       complemento: action.complemento,
       estado: action.estado,
       logradouro: action.logradouro,
-      pais: 'Brasil'
+      errors: action.errors,
+      pais: action.pais
     }
   }
   return(state)
