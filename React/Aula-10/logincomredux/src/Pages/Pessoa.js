@@ -143,7 +143,7 @@ function Pessoa({pessoas,listLoading,editMode,pessoaEditar,dispatch}) {
             }}
             enableReinitialize={true}
           >
-            {({ errors }) => (
+            {({ errors, touched }) => (
             <Form>
             <div className={styles.inputDiv}>
                 <label htmlFor="nome">Nome</label>
@@ -151,7 +151,7 @@ function Pessoa({pessoas,listLoading,editMode,pessoaEditar,dispatch}) {
                   <Field id="nome" name="nome" placeholder="Nome" />
                   <span><IoPerson className={styles.inputIcon}/></span>
                 </div>
-                {errors.nome && <p className={styles.errors}>{errors.nome}</p>}
+                {errors.nome && touched.nome && <p className={styles.errors}>{errors.nome}</p>}
               </div>
 
               <div className={styles.inputDiv}>
@@ -160,7 +160,7 @@ function Pessoa({pessoas,listLoading,editMode,pessoaEditar,dispatch}) {
                   <Field id="email" name="email" placeholder="E-mail" />
                   <span><MdEmail className={styles.inputIcon}/></span>
                 </div>
-                {errors.email && <p className={styles.errors}>{errors.email}</p>}
+                {errors.email && touched.email && <p className={styles.errors}>{errors.email}</p>}
               </div>
 
               <div className={styles.inputDiv}>
@@ -171,7 +171,7 @@ function Pessoa({pessoas,listLoading,editMode,pessoaEditar,dispatch}) {
                   )} />
                   <span><MdCalendarToday className={styles.inputIcon}/></span>
                 </div>
-                {errors.dataNascimento && <p className={styles.errors}>{errors.dataNascimento}</p>}
+                {errors.dataNascimento && touched.dataNascimento && <p className={styles.errors}>{errors.dataNascimento}</p>}
               </div>
 
               <div className={styles.inputDiv}>
@@ -182,7 +182,7 @@ function Pessoa({pessoas,listLoading,editMode,pessoaEditar,dispatch}) {
                   )} />
                   <span><MdDns className={styles.inputIcon}/></span>
                 </div>
-                {errors.cpf && <p className={styles.errors}>{errors.cpf}</p>}
+                {errors.cpf && touched.cpf && <p className={styles.errors}>{errors.cpf}</p>}
               </div>
 
               <div className={styles.buttonDiv}>
