@@ -10,6 +10,7 @@ import api from "./api";
 import { connect } from "react-redux";
 import Endereco from "./Pages/Endereco";
 import NotFound from "./Pages/NotFound";
+import loadingGif from "./images/loading3.gif"
 
 
 const Routers = ({ loading, auth, dispatch }) => {
@@ -23,7 +24,7 @@ const Routers = ({ loading, auth, dispatch }) => {
   }, []);
 
   if (loading) {
-    return <h1>Loading</h1>;
+    return <div className="loadingGif"><img src={loadingGif}/></div>;
   }
   console.log(loading)
 
